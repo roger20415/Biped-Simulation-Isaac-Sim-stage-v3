@@ -7,26 +7,6 @@
   <material name="silver">
     <color rgba="0.700 0.700 0.700 1.000"/>
   </material>
-  <transmission name="Revolute 1_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="Revolute 1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="Revolute 1_actr">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <transmission name="Revolute 2_tran">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="Revolute 2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="Revolute 2_actr">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
   <transmission name="Revolute 3_tran">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="Revolute 3">
@@ -107,22 +87,42 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="Slider 14_tran">
+  <transmission name="Revolute 18_tran">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="Slider 14">
+    <joint name="Revolute 18">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="Slider 14_actr">
+    <actuator name="Revolute 18_actr">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="Revolute 15_tran">
+  <transmission name="Slider 19_tran">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="Revolute 15">
+    <joint name="Slider 19">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="Revolute 15_actr">
+    <actuator name="Slider 19_actr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="Revolute 20_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Revolute 20">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Revolute 20_actr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="Revolute 21_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Revolute 21">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Revolute 21_actr">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
@@ -130,8 +130,8 @@
   <!-- omitted .gazebo include -->
   <link name="base_link">
     <inertial>
-      <origin xyz="-4.0314630566490926e-19 -2.311756942495181e-18 0.0026594776595595215" rpy="0 0 0"/>
-      <mass value="0.0007331653384976692"/>
+      <origin xyz="0.0019999999999999883 -3.3392489231156755e-17 3.1597960612965125e-05" rpy="0 0 0"/>
+      <mass value="0.00020390182942264898"/>
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
     </inertial>
     <visual>
@@ -148,61 +148,21 @@
       </geometry>
     </collision>
   </link>
-  <link name="l_hip_1">
-    <inertial>
-      <origin xyz="-0.0019999999999999987 -7.264315754831885e-11 -0.0021500000223517394" rpy="0 0 0"/>
-      <mass value="8.634107252961229e-05"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
-    </inertial>
-    <visual>
-      <origin xyz="-0.002 -0.00325 -0.001" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://biped_description/meshes/l_hip_1.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="silver"/>
-    </visual>
-    <collision>
-      <origin xyz="-0.002 -0.00325 -0.001" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://biped_description/meshes/l_hip_1.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="r_hip_1">
-    <inertial>
-      <origin xyz="-0.0020000000000000026 7.264315277782929e-11 -0.0021500000223517394" rpy="0 0 0"/>
-      <mass value="8.634107252961229e-05"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
-    </inertial>
-    <visual>
-      <origin xyz="-0.002 0.00325 -0.001" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://biped_description/meshes/r_hip_1.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="silver"/>
-    </visual>
-    <collision>
-      <origin xyz="-0.002 0.00325 -0.001" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://biped_description/meshes/r_hip_1.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
   <link name="l_thigh_1">
     <inertial>
-      <origin xyz="-2.2352835971073405e-11 -0.0020000000726431533 -0.002999999955296517" rpy="0 0 0"/>
+      <origin xyz="-2.2352837896616462e-11 -0.002000000100582839 -0.0029999998770654226" rpy="0 0 0"/>
       <mass value="0.0005023753384976689"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0 -0.00525 0.0033" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0065 0.0068" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_thigh_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="-0.0 -0.00525 0.0033" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0065 0.0068" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_thigh_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -210,19 +170,19 @@
   </link>
   <link name="r_thigh_1">
     <inertial>
-      <origin xyz="-2.2352838191519453e-11 0.0020000000726431494 -0.002999999955296517" rpy="0 0 0"/>
+      <origin xyz="-2.2352839631339938e-11 0.002000000100582833 -0.002999999877065421" rpy="0 0 0"/>
       <mass value="0.0005023753384976689"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
-      <origin xyz="0.0 0.00525 0.0033" rpy="0 0 0"/>
+      <origin xyz="-0.002 0.0065 0.0068" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_thigh_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="0.0 0.00525 0.0033" rpy="0 0 0"/>
+      <origin xyz="-0.002 0.0065 0.0068" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_thigh_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -230,19 +190,19 @@
   </link>
   <link name="l_calf_1">
     <inertial>
-      <origin xyz="3.059388659076845e-11 -0.002000000072643155 -0.003914288283714446" rpy="0 0 0"/>
+      <origin xyz="3.059388506421179e-11 -0.0020000001005828407 -0.003914288205483353" rpy="0 0 0"/>
       <mass value="0.00029110830222198907"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0 -0.00525 0.0093" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0065 0.0128" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_calf_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="-0.0 -0.00525 0.0093" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0065 0.0128" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_calf_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -250,19 +210,19 @@
   </link>
   <link name="r_calf_1">
     <inertial>
-      <origin xyz="3.059388173354271e-11 0.0020000000726431515 -0.003914288283714446" rpy="0 0 0"/>
+      <origin xyz="3.0593878558998755e-11 0.002000000100582825 -0.003914288205483349" rpy="0 0 0"/>
       <mass value="0.00029110830222198907"/>
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="0.0 0.00525 0.0093" rpy="0 0 0"/>
+      <origin xyz="-0.002 0.0065 0.0128" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_calf_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="0.0 0.00525 0.0093" rpy="0 0 0"/>
+      <origin xyz="-0.002 0.0065 0.0128" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_calf_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -270,19 +230,19 @@
   </link>
   <link name="l_ankle_1">
     <inertial>
-      <origin xyz="2.2351747620277e-11 -0.002000000072643157 -0.002149999865889549" rpy="0 0 0"/>
+      <origin xyz="2.2351746755550073e-11 -0.0020000001005828416 -0.0021499997876584485" rpy="0 0 0"/>
       <mass value="8.634107252961244e-05"/>
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0 -0.00525 0.0146" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0065 0.0181" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_ankle_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="-0.0 -0.00525 0.0146" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0065 0.0181" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_ankle_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -290,19 +250,19 @@
   </link>
   <link name="r_ankle_1">
     <inertial>
-      <origin xyz="2.2351739736024254e-11 0.002000000072643144 -0.0021499998882412875" rpy="0 0 0"/>
+      <origin xyz="2.2351737648251824e-11 0.0020000001005828112 -0.002149999810010187" rpy="0 0 0"/>
       <mass value="8.634107252961244e-05"/>
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0 0.00525 0.0146" rpy="0 0 0"/>
+      <origin xyz="-0.002 0.0065 0.0181" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_ankle_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="-0.0 0.00525 0.0146" rpy="0 0 0"/>
+      <origin xyz="-0.002 0.0065 0.0181" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_ankle_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -310,19 +270,19 @@
   </link>
   <link name="l_foot_1">
     <inertial>
-      <origin xyz="-0.001999999977648251 0.0012260273246171237 -0.0005198628795881795" rpy="0 0 0"/>
+      <origin xyz="-0.001999999977648253 0.001226027296677432 -0.0005198628013570808" rpy="0 0 0"/>
       <mass value="0.00045844"/>
       <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.002 -0.00325 0.0189" rpy="0 0 0"/>
+      <origin xyz="-0.004 -0.0045 0.0224" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_foot_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="-0.002 -0.00325 0.0189" rpy="0 0 0"/>
+      <origin xyz="-0.004 -0.0045 0.0224" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/l_foot_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -330,19 +290,19 @@
   </link>
   <link name="r_foot_1">
     <inertial>
-      <origin xyz="-0.00199999997764826 -0.001226060268704573 -0.0005198768851741135" rpy="0 0 0"/>
+      <origin xyz="-0.0019999999776482615 -0.001226060240764916 -0.0005198768069430218" rpy="0 0 0"/>
       <mass value="0.00045842766924883465"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.002 0.00325 0.0189" rpy="0 0 0"/>
+      <origin xyz="-0.004 0.0045 0.0224" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_foot_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="-0.002 0.00325 0.0189" rpy="0 0 0"/>
+      <origin xyz="-0.004 0.0045 0.0224" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/r_foot_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -350,19 +310,19 @@
   </link>
   <link name="sacrum_1">
     <inertial>
-      <origin xyz="-5.322339130313942e-12 -4.923167429282671e-12 0.0020426460827791997" rpy="0 0 0"/>
-      <mass value="0.0001318676695997575"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+      <origin xyz="-0.0018999999999999998 3.2361957557891167e-11 -0.0017507188623073454" rpy="0 0 0"/>
+      <mass value="0.0022235524932220385"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="0.0 -0.0 -0.0043" rpy="0 0 0"/>
+      <origin xyz="-0.0039 -0.0 -0.0055" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/sacrum_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="0.0 -0.0 -0.0043" rpy="0 0 0"/>
+      <origin xyz="-0.0039 -0.0 -0.0055" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/sacrum_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -370,38 +330,64 @@
   </link>
   <link name="back_1">
     <inertial>
-      <origin xyz="-4.243683698498517e-11 -0.0016999999999999988 0.004605215490604516" rpy="0 0 0"/>
-      <mass value="0.0027553261785723494"/>
-      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+      <origin xyz="0.0 1.341104514528074e-10 0.007249999877065423" rpy="0 0 0"/>
+      <mass value="0.005190420000000001"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
     </inertial>
     <visual>
-      <origin xyz="0.0 -0.0017 -0.0071" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0 -0.007" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/back_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
-      <origin xyz="0.0 -0.0017 -0.0071" rpy="0 0 0"/>
+      <origin xyz="-0.002 -0.0 -0.007" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://biped_description/meshes/back_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <joint name="Revolute 1" type="revolute">
-    <origin xyz="0.002 0.00325 0.001" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="l_hip_1"/>
-    <axis xyz="1.0 -0.0 0.0"/>
-    <limit upper="1.396263" lower="-0.872665" effort="100" velocity="100"/>
-  </joint>
-  <joint name="Revolute 2" type="revolute">
-    <origin xyz="0.002 -0.00325 0.001" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="r_hip_1"/>
-    <axis xyz="1.0 -0.0 0.0"/>
-    <limit upper="0.872665" lower="-1.396263" effort="100" velocity="100"/>
-  </joint>
+  <link name="l_hip_1">
+    <inertial>
+      <origin xyz="-0.0020000000000000018 -1.0058283980013405e-10 -0.002149999944120643" rpy="0 0 0"/>
+      <mass value="8.634107252961229e-05"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.004 -0.0045 0.0025" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://biped_description/meshes/l_hip_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.004 -0.0045 0.0025" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://biped_description/meshes/l_hip_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_hip_1">
+    <inertial>
+      <origin xyz="-0.002000000000000005 1.005828363306871e-10 -0.002149999944120643" rpy="0 0 0"/>
+      <mass value="8.634107252961229e-05"/>
+      <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.004 0.0045 0.0025" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://biped_description/meshes/r_hip_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.004 0.0045 0.0025" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://biped_description/meshes/r_hip_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
   <joint name="Revolute 3" type="revolute">
     <origin xyz="-0.002 0.002 -0.0043" rpy="0 0 0"/>
     <parent link="l_hip_1"/>
@@ -413,14 +399,14 @@
     <origin xyz="-0.002 -0.002 -0.0043" rpy="0 0 0"/>
     <parent link="r_hip_1"/>
     <child link="r_thigh_1"/>
-    <axis xyz="0.0 1.0 0.0"/>
+    <axis xyz="0.0 1.0 -0.0"/>
     <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
   </joint>
   <joint name="Revolute 5" type="revolute">
     <origin xyz="0.0 0.0 -0.006" rpy="0 0 0"/>
     <parent link="l_thigh_1"/>
     <child link="l_calf_1"/>
-    <axis xyz="-0.0 1.0 0.0"/>
+    <axis xyz="-0.0 1.0 -0.0"/>
     <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
   </joint>
   <joint name="Revolute 6" type="revolute">
@@ -434,7 +420,7 @@
     <origin xyz="0.0 0.0 -0.0053" rpy="0 0 0"/>
     <parent link="l_calf_1"/>
     <child link="l_ankle_1"/>
-    <axis xyz="0.0 1.0 0.0"/>
+    <axis xyz="0.0 1.0 -0.0"/>
     <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
   </joint>
   <joint name="Revolute 8" type="revolute">
@@ -455,21 +441,32 @@
     <origin xyz="0.002 0.002 -0.0043" rpy="0 0 0"/>
     <parent link="r_ankle_1"/>
     <child link="r_foot_1"/>
-    <axis xyz="-1.0 0.0 0.0"/>
+    <axis xyz="-1.0 0.0 -0.0"/>
     <limit upper="0.349066" lower="-0.698132" effort="100" velocity="100"/>
   </joint>
-  <joint name="Slider 14" type="prismatic">
-    <origin xyz="0.0 0.0 0.0043" rpy="0 0 0"/>
+  <joint name="Revolute 18" type="continuous">
+    <origin xyz="0.0039 0.0 0.0055" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="sacrum_1"/>
-    <axis xyz="-0.0 -1.0 0.0"/>
-    <limit upper="0.009" lower="-0.009" effort="100" velocity="100"/>
+    <axis xyz="-1.0 0.0 0.0"/>
   </joint>
-  <joint name="Revolute 15" type="revolute">
-    <origin xyz="0.0 0.0017 0.0028" rpy="0 0 0"/>
+  <joint name="Slider 19" type="prismatic">
+    <origin xyz="-0.0019 0.0 0.0015" rpy="0 0 0"/>
     <parent link="sacrum_1"/>
     <child link="back_1"/>
-    <axis xyz="-0.0 -1.0 0.0"/>
-    <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit upper="0.004" lower="-0.004" effort="100" velocity="100"/>
+  </joint>
+  <joint name="Revolute 20" type="continuous">
+    <origin xyz="0.004 0.0045 -0.0025" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="l_hip_1"/>
+    <axis xyz="1.0 0.0 0.0"/>
+  </joint>
+  <joint name="Revolute 21" type="continuous">
+    <origin xyz="0.004 -0.0045 -0.0025" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="r_hip_1"/>
+    <axis xyz="1.0 0.0 0.0"/>
   </joint>
 </robot>
