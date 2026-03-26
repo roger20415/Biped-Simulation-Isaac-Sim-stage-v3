@@ -7,8 +7,8 @@
                 double radius = 5
             }
             dictionary Perspective = {
-                double3 position = (0.09174033557236441, 0.04640495861360426, 0.02960546408834293)
-                double3 target = (-0.8326687527465249, -0.5110446958147832, -0.041698877834581025)
+                double3 position = (0.20133430359279558, -0.07573291258288546, 0.04326871065493514)
+                double3 target = (-0.7822505766714539, 0.2997744717579217, 0.10798026308473452)
             }
             dictionary Right = {
                 double3 position = (0, -5, 0)
@@ -46,7 +46,7 @@ def Xform "World"
     {
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0, 0.05024726634718983, 0)
+        double3 xformOp:translate = (0, 0.1753328373764682, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Scope "visuals"
@@ -1991,7 +1991,10 @@ def Xform "World"
                 prepend apiSchemas = ["PhysicsRigidBodyAPI", "IsaacLinkAPI", "PhysicsMassAPI"]
             )
             {
-                string isaac:nameOverride
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                    doc = "Name override for prim lookup in base name search"
+                )
                 point3f physics:centerOfMass = (-0.0019, 3.2361957e-11, -0.0017507189)
                 float3 physics:diagonalInertia = (0, 0, 0)
                 float physics:mass = 0.0022235524
@@ -2020,7 +2023,10 @@ def Xform "World"
                 prepend apiSchemas = ["PhysicsRigidBodyAPI", "IsaacLinkAPI", "PhysicsMassAPI"]
             )
             {
-                string isaac:nameOverride
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                    doc = "Name override for prim lookup in base name search"
+                )
                 point3f physics:centerOfMass = (0, 1.3411044e-10, 0.00725)
                 float3 physics:diagonalInertia = (0, 0, 0)
                 float physics:mass = 0.00519042
@@ -2049,7 +2055,10 @@ def Xform "World"
                 prepend apiSchemas = ["PhysicsRigidBodyAPI", "IsaacLinkAPI", "PhysicsMassAPI"]
             )
             {
-                string isaac:nameOverride
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                    doc = "Name override for prim lookup in base name search"
+                )
                 point3f physics:centerOfMass = (-0.002, -1.0058284e-10, -0.0021499998)
                 float3 physics:diagonalInertia = (0, 0, 0)
                 float physics:mass = 0.000086341075
@@ -2078,7 +2087,10 @@ def Xform "World"
                 prepend apiSchemas = ["PhysicsRigidBodyAPI", "IsaacLinkAPI", "PhysicsMassAPI"]
             )
             {
-                string isaac:nameOverride
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                    doc = "Name override for prim lookup in base name search"
+                )
                 point3f physics:centerOfMass = (-2.2352838e-11, -0.002, -0.0029999998)
                 float3 physics:diagonalInertia = (0, 0, 0)
                 float physics:mass = 0.00050237536
@@ -2107,7 +2119,10 @@ def Xform "World"
                 prepend apiSchemas = ["PhysicsRigidBodyAPI", "IsaacLinkAPI", "PhysicsMassAPI"]
             )
             {
-                string isaac:nameOverride
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                    doc = "Name override for prim lookup in base name search"
+                )
                 point3f physics:centerOfMass = (3.0593885e-11, -0.002, -0.0039142882)
                 float3 physics:diagonalInertia = (0, 0, 0)
                 float physics:mass = 0.0002911083
@@ -2165,7 +2180,10 @@ def Xform "World"
                 prepend apiSchemas = ["PhysicsRigidBodyAPI", "IsaacLinkAPI", "PhysicsMassAPI"]
             )
             {
-                string isaac:nameOverride
+                string isaac:nameOverride (
+                    displayName = "Name Override"
+                    doc = "Name override for prim lookup in base name search"
+                )
                 point3f physics:centerOfMass = (-0.0019999999, 0.0012260273, -0.0005198628)
                 float3 physics:diagonalInertia = (0, 0, 0)
                 float physics:mass = 0.00045844
@@ -2343,7 +2361,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 3.6847383e-9
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2382,7 +2400,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 1.316225e-8
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2419,7 +2437,7 @@ def Xform "World"
                     prepend apiSchemas = ["PhysxJointAPI", "PhysicsDriveAPI:angular", "IsaacJointAPI"]
                 )
                 {
-                    float drive:angular:physics:damping = 1
+                    float drive:angular:physics:damping = 0
                     float drive:angular:physics:maxForce = 3.4028235e38
                     float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
@@ -2497,7 +2515,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 2.1796844e-9
                     float drive:angular:physics:maxForce = 3.4028235e38
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2534,7 +2552,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 6.2898944e-9
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2573,7 +2591,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 1.4501011e-8
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2612,7 +2630,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 1.3162458e-8
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2651,7 +2669,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 3.6848207e-9
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2690,7 +2708,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 2.179684e-9
                     float drive:angular:physics:maxForce = 3.4028235e38
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2727,7 +2745,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 6.289889e-9
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -2766,7 +2784,7 @@ def Xform "World"
                 {
                     float drive:angular:physics:damping = 1.4500947e-8
                     float drive:angular:physics:maxForce = 100
-                    float drive:angular:physics:stiffness = 1
+                    float drive:angular:physics:stiffness = 10
                     float drive:angular:physics:targetPosition = 0
                     uniform token drive:angular:physics:type = "force"
                     string isaac:nameOverride (
@@ -6032,7 +6050,7 @@ def Xform "Environment"
         float3[] extent = [(-50, -50, 0), (50, 50, 0)]
         int[] faceVertexCounts = [4]
         int[] faceVertexIndices = [0, 1, 3, 2]
-        rel material:binding = </Environment/Looks/Grid> (
+        rel material:binding = </GroundPhysicsMaterial> (
             bindMaterialAs = "weakerThanDescendants"
         )
         normal3f[] normals = [(0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)] (
@@ -6051,10 +6069,13 @@ def Xform "Environment"
     }
 
     def Plane "groundCollider" (
-        prepend apiSchemas = ["PhysicsCollisionAPI"]
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
     )
     {
         uniform token axis = "Z"
+        rel material:binding = </GroundPhysicsMaterial> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
         uniform token purpose = "guide"
     }
 }
@@ -6134,5 +6155,13 @@ def PhysicsScene "physicsScene" (
     bool physxScene:enableGPUDynamics = 0
     bool physxScene:enableStabilization = 1
     uniform token physxScene:solverType = "TGS"
+}
+
+def Material "GroundPhysicsMaterial" (
+    prepend apiSchemas = ["PhysicsMaterialAPI"]
+)
+{
+    float physics:dynamicFriction = 0.8
+    float physics:staticFriction = 1.2
 }
 
