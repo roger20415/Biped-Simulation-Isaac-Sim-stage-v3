@@ -2029,7 +2029,7 @@ def Xform "World"
                 )
                 point3f physics:centerOfMass = (0, 1.3411044e-10, 0.00725)
                 float3 physics:diagonalInertia = (0, 0, 0)
-                float physics:mass = 0.00143
+                float physics:mass = 0.00333526
                 quatf physics:principalAxes = (1, 0, 0, 0)
                 quatd xformOp:orient = (1, 0, 0, 0)
                 double3 xformOp:scale = (1, 1, 1)
@@ -4486,7 +4486,7 @@ def Xform "World"
                     custom string inputs:topicName = "/counterweight/joint_targets"
                     token node:type = "isaacsim.ros2.bridge.ROS2Subscriber"
                     int node:typeVersion = 1
-                    custom float[] outputs:data
+                    custom float[] outputs:data = []
                     custom uint outputs:execOut (
                         customData = {
                             bool isExecution = 1
@@ -4508,9 +4508,10 @@ def Xform "World"
                             bool isExecution = 1
                         }
                     )
+                    delete uint inputs:execIn.connect = </World/biped_v3/Subscribers/CounterweightAngleSubscriber/on_playback_tick.outputs:tick>
                     prepend uint inputs:execIn.connect = [
                         </World/biped_v3/Subscribers/JointAngleSubscriber/on_playback_tick.outputs:tick>,
-                        </World/biped_v3/Subscribers/CounterweightAngleSubscriber/on_playback_tick.outputs:tick>,
+                        </World/biped_v3/Subscribers/CounterweightAngleSubscriber/ros2_subscriber.outputs:execOut>,
                     ]
                     custom int[] inputs:jointIndices
                     custom token[] inputs:jointNames
@@ -4691,7 +4692,7 @@ def Xform "World"
                     custom string inputs:topicName = "/biped/left_joint_target"
                     token node:type = "isaacsim.ros2.bridge.ROS2Subscriber"
                     int node:typeVersion = 1
-                    custom float[] outputs:data
+                    custom float[] outputs:data = []
                     custom uint outputs:execOut (
                         customData = {
                             bool isExecution = 1
@@ -4713,7 +4714,7 @@ def Xform "World"
                             bool isExecution = 1
                         }
                     )
-                    prepend uint inputs:execIn.connect = </World/biped_v3/Subscribers/LeftJointSubscriber/on_playback_tick.outputs:tick>
+                    prepend uint inputs:execIn.connect = </World/biped_v3/Subscribers/LeftJointSubscriber/ros2_subscriber.outputs:execOut>
                     custom int[] inputs:jointIndices
                     custom token[] inputs:jointNames
                     prepend token[] inputs:jointNames.connect = </World/biped_v3/Subscribers/LeftJointSubscriber/make_array.outputs:array>
@@ -4887,7 +4888,7 @@ def Xform "World"
                     custom string inputs:topicName = "/biped/right_joint_target"
                     token node:type = "isaacsim.ros2.bridge.ROS2Subscriber"
                     int node:typeVersion = 1
-                    custom float[] outputs:data
+                    custom float[] outputs:data = []
                     custom uint outputs:execOut (
                         customData = {
                             bool isExecution = 1
@@ -4909,7 +4910,8 @@ def Xform "World"
                             bool isExecution = 1
                         }
                     )
-                    prepend uint inputs:execIn.connect = </World/biped_v3/Subscribers/RightJointSubscriber/on_playback_tick.outputs:tick>
+                    delete uint inputs:execIn.connect = </World/biped_v3/Subscribers/RightJointSubscriber/on_playback_tick.outputs:tick>
+                    prepend uint inputs:execIn.connect = </World/biped_v3/Subscribers/RightJointSubscriber/ros2_subscriber.outputs:execOut>
                     custom int[] inputs:jointIndices
                     custom token[] inputs:jointNames
                     prepend token[] inputs:jointNames.connect = </World/biped_v3/Subscribers/RightJointSubscriber/make_array.outputs:array>
@@ -6173,7 +6175,7 @@ def "Render" (
                 uint omni:rtx:viewTile:limit = 4294967295
                 rel orderedVars = </Render/Vars/LdrColor>
                 custom bool overrideClipRange = 0
-                uniform int2 resolution = (1230, 130)
+                uniform int2 resolution = (1504, 175)
             }
         }
     }
