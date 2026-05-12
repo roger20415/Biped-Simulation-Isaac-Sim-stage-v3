@@ -6,7 +6,7 @@ import omni.graph.core as og
 #         l_calf_com(float[3]),  r_calf_com(float[3]),
 #         l_ankle_com(float[3]), r_ankle_com(float[3]),
 #         l_foot_com(float[3]),  r_foot_com(float[3])
-# outputs: com_array(double[])
+# outputs: com_array(float[])
 
 def compute(db: og.Database):
     parts = [
@@ -34,4 +34,3 @@ def compute(db: og.Database):
 
     db.outputs.com_array = arr
     return True
-
